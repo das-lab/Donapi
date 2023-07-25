@@ -1,0 +1,524 @@
+{
+    "nodes": [
+        {
+            "name": "Sensitive information theft"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_HOSTNAME_s1"
+        },
+        {
+            "name": "NETWORK_OUT_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_USERINFO_s1"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_PLATFORM_s1"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_HOME_DIR_s1"
+        },
+        {
+            "name": "FILE_READ_SYS_INFO_s1"
+        },
+        {
+            "name": "FILE_READ_SSH_INFO_s1"
+        },
+        {
+            "name": "FILE_READ_SERV_INFO_s1"
+        },
+        {
+            "name": "FILE_READ_CRON_PLAN_s1"
+        },
+        {
+            "name": "FILE_READ_SENS_DIR_s1"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_ENVIRONMENT_VARIABLES_s1"
+        },
+        {
+            "name": "NETWORK_OUT_s1"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_HOSTNAME_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_USERINFO_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_PLATFORM_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_NETWORK_INTERFACES_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_OS_HOME_DIR_s2"
+        },
+        {
+            "name": "FILE_READ_SYS_INFO_s2"
+        },
+        {
+            "name": "FILE_READ_SSH_INFO_s2"
+        },
+        {
+            "name": "FILE_READ_SERV_INFO_s2"
+        },
+        {
+            "name": "FILE_READ_CRON_PLAN_s2"
+        },
+        {
+            "name": "FILE_READ_SENS_DIR_s2"
+        },
+        {
+            "name": "SYSTEM_MESSAGE_ENVIRONMENT_VARIABLES_s2"
+        },
+        {
+            "name": "FILE_READ_s1"
+        },
+        {
+            "name": "Malicious software import"
+        },
+        {
+            "name": "NETWORK_IN_s1"
+        },
+        {
+            "name": "CODE_GENERATION_s2"
+        },
+        {
+            "name": "PROCESS_FILE_EXECUTION_s2"
+        },
+        {
+            "name": "CODE_GENERATION_s1"
+        },
+        {
+            "name": "Sensitive file operation"
+        },
+        {
+            "name": "FILE_DELETE_SYS_INFO_s1"
+        },
+        {
+            "name": "FILE_DELETE_SSH_INFO_s1"
+        },
+        {
+            "name": "FILE_DELETE_SERV_INFO_s1"
+        },
+        {
+            "name": "FILE_DELETE_SENS_DIR_s1"
+        },
+        {
+            "name": "FILE_MODIFY_SYS_INFO_s1"
+        },
+        {
+            "name": "FILE_MODIFY_SSH_INFO_s1"
+        },
+        {
+            "name": "FILE_MODIFY_SERV_INFO_s1"
+        },
+        {
+            "name": "FILE_MODIFY_CRON_PLAN_s1"
+        },
+        {
+            "name": "FILE_MODIFY_SENS_DIR_s1"
+        },
+        {
+            "name": "FILE_CREATE_SYS_INFO_s1"
+        },
+        {
+            "name": "FILE_CREATE_SSH_INFO_s1"
+        },
+        {
+            "name": "FILE_CREATE_SERV_INFO_s1"
+        },
+        {
+            "name": "FILE_CREATE_CRON_PLAN_s1"
+        },
+        {
+            "name": "FILE_CREATE_SENS_DIR_s1"
+        },
+        {
+            "name": "Reverse shell"
+        },
+        {
+            "name": "PROCESS_START_SHELL_s1"
+        },
+        {
+            "name": "PROCESS_START_SHELL_s2"
+        },
+        {
+            "name": "PROCESS_COMMAND_EXECUTION_s2"
+        },
+        {
+            "name": "PROCESS_COMMAND_EXECUTION_s1"
+        },
+        {
+            "name": "Suspicious command execution"
+        }
+    ],
+    "links": [
+        {
+            "source": "Sensitive information theft",
+            "target": "SYSTEM_MESSAGE_OS_HOSTNAME_s1",
+            "value": 1
+        },
+        {
+            "source": "SYSTEM_MESSAGE_OS_HOSTNAME_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "SYSTEM_MESSAGE_OS_USERINFO_s1",
+            "value": 1
+        },
+        {
+            "source": "SYSTEM_MESSAGE_OS_USERINFO_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "SYSTEM_MESSAGE_OS_PLATFORM_s1",
+            "value": 1
+        },
+        {
+            "source": "SYSTEM_MESSAGE_OS_PLATFORM_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "SYSTEM_MESSAGE_OS_HOME_DIR_s1",
+            "value": 1
+        },
+        {
+            "source": "SYSTEM_MESSAGE_OS_HOME_DIR_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_SYS_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_SYS_INFO_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_SSH_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_SSH_INFO_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_SERV_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_SERV_INFO_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_CRON_PLAN_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_CRON_PLAN_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_SENS_DIR_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_SENS_DIR_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "SYSTEM_MESSAGE_ENVIRONMENT_VARIABLES_s1",
+            "value": 1
+        },
+        {
+            "source": "SYSTEM_MESSAGE_ENVIRONMENT_VARIABLES_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_OS_HOSTNAME_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_OS_USERINFO_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_OS_PLATFORM_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_OS_NETWORK_INTERFACES_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_OS_HOME_DIR_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "FILE_READ_SYS_INFO_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "FILE_READ_SSH_INFO_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "FILE_READ_SERV_INFO_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "FILE_READ_CRON_PLAN_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "FILE_READ_SENS_DIR_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "SYSTEM_MESSAGE_ENVIRONMENT_VARIABLES_s2",
+            "value": 1
+        },
+        {
+            "source": "Sensitive information theft",
+            "target": "FILE_READ_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Malicious software import",
+            "target": "NETWORK_IN_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_IN_s1",
+            "target": "CODE_GENERATION_s2",
+            "value": 1
+        },
+        {
+            "source": "Malicious software import",
+            "target": "NETWORK_IN_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_IN_s1",
+            "target": "PROCESS_FILE_EXECUTION_s2",
+            "value": 1
+        },
+        {
+            "source": "Malicious software import",
+            "target": "CODE_GENERATION_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_DELETE_SYS_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_DELETE_SSH_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_DELETE_SERV_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_DELETE_SENS_DIR_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_MODIFY_SYS_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_MODIFY_SSH_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_MODIFY_SERV_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_MODIFY_CRON_PLAN_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_MODIFY_SENS_DIR_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_CREATE_SYS_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_CREATE_SSH_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_CREATE_SERV_INFO_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_CREATE_CRON_PLAN_s1",
+            "value": 1
+        },
+        {
+            "source": "Sensitive file operation",
+            "target": "FILE_CREATE_SENS_DIR_s1",
+            "value": 1
+        },
+        {
+            "source": "Reverse shell",
+            "target": "PROCESS_START_SHELL_s1",
+            "value": 1
+        },
+        {
+            "source": "PROCESS_START_SHELL_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Reverse shell",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "PROCESS_START_SHELL_s2",
+            "value": 1
+        },
+        {
+            "source": "Reverse shell",
+            "target": "NETWORK_OUT_s1",
+            "value": 1
+        },
+        {
+            "source": "NETWORK_OUT_s1",
+            "target": "PROCESS_COMMAND_EXECUTION_s2",
+            "value": 1
+        },
+        {
+            "source": "Reverse shell",
+            "target": "PROCESS_COMMAND_EXECUTION_s1",
+            "value": 1
+        },
+        {
+            "source": "PROCESS_COMMAND_EXECUTION_s1",
+            "target": "NETWORK_OUT_s2",
+            "value": 1
+        },
+        {
+            "source": "Suspicious command execution",
+            "target": "FILE_READ_s1",
+            "value": 1
+        },
+        {
+            "source": "FILE_READ_s1",
+            "target": "PROCESS_COMMAND_EXECUTION_s2",
+            "value": 1
+        }
+    ]
+}
