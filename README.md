@@ -6,6 +6,8 @@ For more information, please check the [web page](https://das-lab.github.io/Dona
 
 The main directory structure is as follows:
 
+```
+
 ├── ./assets/           # The assets directory contains all the static files.
 │  ├── css/
 │  ├── img/
@@ -14,3 +16,5 @@ The main directory structure is as follows:
 ├── index.html          # The index.html is the main page of the web page.
 ├── tables.html         # The tables.html is the page of the tables.
 ├── README.md           
+
+```
