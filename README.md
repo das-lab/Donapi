@@ -10,7 +10,7 @@ Some of the details about the **Donapi** will be briefly described here.
 The paper involves a part of the machine learning model, so we propose corresponding features to help complete the task, as follows.
 
 
-####Obfuscation features
+#### Obfuscation features
 
 | Feature | Description |
 | :----:  |    :----:   |
@@ -41,7 +41,7 @@ The paper involves a part of the machine learning model, so we propose correspon
  |kw_function_frequency |	Frequency of the keyword 'function'
 
 
-### URL features
+#### URL features
 | Feature | Description |
 | :----:  |    :----:   |
 |entropy|	Longest subdomain entropy|
@@ -54,7 +54,7 @@ The paper involves a part of the machine learning model, so we propose correspon
 |gibberish|	gibberish detection for determining the readability of the longest subdomains|
 |top_domain|	Top-level domain types, including: xyz, br, us, etc.|
 
-### API sequence features
+#### API sequence features
 
 | Feature | Description |
 | :----:  |    :----:   |
